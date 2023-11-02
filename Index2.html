@@ -1,64 +1,69 @@
-Ayush's Robotic Arm Smart Car
-My project is to build a smart car with a self-cooling system and also a robotic arm to pick up and carry objects. The robotic arm smart car has a fan that turns on/off based on the temperature measured by the thermostat assembled on the smart car. My project also has infrared sensors and a thermostat, each for different functionalities. The infrared sensors are placed underneath the rover to detect ground surface within a 5-centimeter range by emitting light waves and receiving reflected light waves. The thermostat's function is to measure the room temperature, and based on a certain room temperature, the thermostat sends a signal to arduino controller board to either turn on or off the fan.
+# Ayush's Robotic Arm Smart Car
+My project is to build a smart car with a self-cooling system and also a robotic arm to pick up and carry objects. The robotic arm smart car has a fan that turns on/off based on the temperature measured by the thermostat assembled on the smart car. My project also has infrared sensors and a thermostat, each for different functionalities. The infrared sensors are placed underneath the rover to detect ground surface within a 5-centimeter range by emitting light waves and receiving reflected light waves. The thermostat's function is to measure the room temperature, and based on a certain room temperature, the thermostat sends a signal to arduino controller board to either turn on or off the fan. 
 
-Engineer	School	Area of Interest	Grade
-Ayush C	Mountain House High School	Mechatronic Engineering	Incoming Senior
-Headstone Image
+| **Engineer** | **School** | **Area of Interest** | **Grade** |
+|:--:|:--:|:--:|:--:|
+| Ayush C | Mountain House High School | Mechatronic Engineering | Incoming Senior
 
-Final Milestone
+![Headstone Image](IMG-1417.jpg)
+  
+# Final Milestone
 My final milestone is to integrate my final modification of a self-cooling regulating system. This self-cooling regulating system consists of a fan and a thermostat, and this system works by turning on or off a fan based on the detected room temperature from the thermostat.
+- One big problem I had was to assemble the fan and thermostat kit onto my smart car using the breadboard.
+- In order to get familiar with the kit, I first tried powering the fan from the rover.
+- The fan has two wires, one red and one black wire. The 9-volt battery supplies voltage to flows from the red wire and to exit out from the black wire.
+- <img src="IMG-1407 (1).jpg" alt="Assembled Rover" width="200" height="250">
+- I powered the fan by plugging the red wire into one of the output pins of the H-bridge to get power from the battery and the black wire into ground level. The fan was spinning.
+- Then I had to assemble the fan with the thermostat.
+- The thermostat is consisted of a metal conductor (to conduct heat) attached to a digital temperature sensor.
+-  <img src="1CA60666-985A-4DFE-B3C1-500DFDA6B598.jpeg" alt="Assembled Rover" width="330" height="250">
+- The thermal sensor also has one yellow wire to transmit data on the detected room temperature to the arduino board. Based on the data and the detected room temperature, the arduino board provides power to the fan if the room temperature exceeds 10 degrees Fahrenheit, and otherwise not.
+- This is a segment of the output of my thermal sensor. 
+- <img src="91E2CE97-54B5-4208-A8AB-7262AFB2E3F6.jpeg" alt="Assembled Rover" width="730" height="500">
+- My final milestone video: 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fvaJicvpfIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+- My future goal of this project is to replace the fan with a machine that send data about temperature at different places and other information like pictures and wind speed to remote systems. This gives us opportunities to learn more about those places to make tasks of gathering information easier for human beings, so they can analyze raw data. 
 
-One big problem I had was to assemble the fan and thermostat kit onto my smart car using the breadboard.
-In order to get familiar with the kit, I first tried powering the fan from the rover.
-The fan has two wires, one red and one black wire. The 9-volt battery supplies voltage to flows from the red wire and to exit out from the black wire.
-Assembled Rover
-I powered the fan by plugging the red wire into one of the output pins of the H-bridge to get power from the battery and the black wire into ground level. The fan was spinning.
-Then I had to assemble the fan with the thermostat.
-The thermostat is consisted of a metal conductor (to conduct heat) attached to a digital temperature sensor.
-Assembled Rover
-The thermal sensor also has one yellow wire to transmit data on the detected room temperature to the arduino board. Based on the data and the detected room temperature, the arduino board provides power to the fan if the room temperature exceeds 10 degrees Fahrenheit, and otherwise not.
-This is a segment of the output of my thermal sensor.
-Assembled Rover
-My final milestone video:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fvaJicvpfIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> - My future goal of this project is to replace the fan with a machine that send data about temperature at different places and other information like pictures and wind speed to remote systems. This gives us opportunities to learn more about those places to make tasks of gathering information easier for human beings, so they can analyze raw data.
-Second Milestone
+
+# Second Milestone
 My second milestone is completing my robotic arm and integrating it with my smart car.
-
-My first plan is to make the robotic arm and assemble its parts.
-My second plan is to test the servo motors of the robotic arm to make sure the servos are rotating accordingly to the controls.
-My third plan is to make a stand or a table for the robotic arm to be placed on, and that stand is placed nicely on the rover so when the rover moves, the stand with the robotic arm inside doesn't fall.
-My stand for the rover: Assembled Rover
-After I assembled my robotic arm, I had to work on controlling my four servo motors. I already got the codebase, so I decided to upload them onto the arduino board of my robotic arm.
-One problem I had was a worry that my servo motors have to move accordingly to the handling of the input devices of the potentiometers. Based on the angle the potentiometers are rotated, the servo motors rotate in the same angle.
-Each servo motor has a corresponding potentiometer that is each connected with an analog pin.
-Assembled robotic arm: Assembled Rover
-Another problem I faced with my robotic arm was that even thought the one servo motor was spinning, the arm wouldn't move. I realized that stand near the servo motor is not attached to the servo motor. This was a mechanical pproblem, so in order to solve this problem, I used a nut and a screw to attach the servo with the stand. Now, the stand will move with the servo motor.
-One last problem I have is making my robotic claw pick up objects. Even though the corresponding servo rotates, the claws keep twitching. I keep screwing my robotic claw hard, but the clasws don't open and close smoothly. -Second milestone video:
+- My first plan is to make the robotic arm and assemble its parts.
+- My second plan is to test the servo motors of the robotic arm to make sure the servos are rotating accordingly to the controls.
+- My third plan is to make a stand or a table for the robotic arm to be placed on, and that stand is placed nicely on the rover so when the rover moves, the stand with the robotic arm inside doesn't fall.
+- My stand for the rover:
+   <img src="IMG-1404.jpg" alt="Assembled Rover" width="500" height="400">
+- After I assembled my robotic arm, I had to work on controlling my four servo motors. I already got the codebase, so I decided to upload them onto the arduino board of my robotic arm.
+- One problem I had was a worry that my servo motors have to move accordingly to the handling of the input devices of the potentiometers. Based on the angle the potentiometers are rotated, the servo motors rotate in the same angle.
+- Each servo motor has a corresponding potentiometer that is each connected with an analog pin.
+- Assembled robotic arm:
+  <img src="IMG-1406.jpg" alt="Assembled Rover" width="500" height="400">
+- Another problem I faced with my robotic arm was that even thought the one servo motor was spinning, the arm wouldn't move. I realized that stand near the servo motor is not attached to the servo motor. This was a mechanical pproblem, so in order to solve this problem, I used a nut and a screw to attach the servo with the stand. Now, the stand will move with the servo motor.
+- One last problem I have is making my robotic claw pick up objects. Even though the corresponding servo rotates, the claws keep twitching. I keep screwing my robotic claw hard, but the clasws don't open and close smoothly. 
+-Second milestone video:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/X3QUw-6nA50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-First Milestone
+
+# First Milestone
 To complete my project of a rover with a fan and a robotic arm, the first milestone I completed was getting my rover to follow the instructions of my arduino code in order to do basic actions like moving backward, moving forward, and turning towards one direction. I struggled to complete this milestone initially because my rover wouldn’t follow the instructions of my arduino code.
-
-First, I tried to assemble all the necessary the mechanical parts of my rover before uploading Arduino source code into the arduino board. I decided to get my wire configuration right before testing my rover's positions.
-After I assesmbled my rover's mechanical side, I decideed to work on the software part by working in the Arduino IDE editor.
-In my code, I defined some functions called moveForward (to move forward for a certain time), moveBackward (to move backward for a certain time), turnLeft, and turnRight. Then in the loop function, I coded some instructions that would make the rover move forward and then move backward for a certain amount of time. After these two functions, the rover is instructed to rotate right and then rotate left around itself.
-My assembled rover:
-Assembled Rover
-In order to test my code, I would use an USB adapter to upload my code into the arduino board.
-
-My problem was that when my rover instructed to move forward, it would instead rotate very fast in the counterclockwise or clockwise direction.
-The arduino code was right, so I knew there was nothing wrong with the software part of my rover.
-Each TT motor has a black and red wires attached as a terminal for battery voltage. The voltage flows from the positive terminal of the battery to the negative terminal. The voltage starts from the power source and starts out through the red wire. It flows through the 5 volt input power pin to the output pins of the H bridge. The source code is trasnferred from the digital pins to the input pins of the H bridge as well, and in the code, each input pin is assigned to the corresponding or matching number.
-Arduino board and H Bridge map:
-Arduino board
-H Bridge
-Solution: I forgot that my motors are set in the opposite direction. Because of this, even though both motors are spinning in the same direction, the opposite set up with make the rover as a system rotate. Due to this problem, I decided to switch the set up of the black and red wires, so the individual motors spin in opposite directions making the rover a system move forward. -This is how I fixed this problem.
-Before my final project needs to be completed, I need my rover to move accordingly to the arduino code with the added modifications.
-First milestone video:
+- First, I tried to assemble all the necessary the mechanical parts of my rover before uploading Arduino source code into the arduino board. I decided to get my wire configuration right before testing my rover's positions.
+- After I assesmbled my rover's mechanical side, I decideed to work on the software part by working in the Arduino IDE editor.
+- In my code, I defined some functions called moveForward (to move forward for a certain time), moveBackward (to move backward for a certain time), turnLeft, and turnRight. Then in the loop function, I coded some instructions that would make the rover move forward and then move backward for a certain amount of time. After these two functions, the rover is instructed to rotate right and then rotate left around itself.
+- My assembled rover:
+- <img src="IMG-1373.jpg" alt="Assembled Rover" width="500" height="400">
+- In order to test my code, I would use an USB adapter to upload my code into the arduino board.
+- <img src="IMG-1374.jpg" alt="" width="500" height="400">
+- My problem was that when my rover instructed to move forward, it would instead rotate very fast in the counterclockwise or clockwise direction. 
+- The arduino code was right, so I knew there was nothing wrong with the software part of my rover.
+- Each TT motor has a black and red wires attached as a terminal for battery voltage. The voltage flows from the positive terminal of the battery to the negative terminal. The voltage starts from the power source and starts out through the red wire. It flows through the 5 volt input power pin to the output pins of the H bridge. The source code is trasnferred from the digital pins to the input pins of the H bridge as well, and in the code, each input pin is assigned to the corresponding or matching number. 
+- Arduino board and H Bridge map:
+- <img src="Arduino-UNO-Description.png" alt="Arduino board" width="500" height="400">
+- <img src="H-Bridge-Motor-Driver-Circuit-using-L293D.jpeg" alt="H Bridge" width="500" height="400">
+- Solution: I forgot that my motors are set in the opposite direction. Because of this, even though both motors are spinning in the same direction, the opposite set up with make the rover as a system rotate. Due to this problem, I decided to switch the set up of the black and red wires, so the individual motors spin in opposite directions making the rover a system move forward. 
+-This is how I fixed this problem.
+- Before my final project needs to be completed, I need my rover to move accordingly to the arduino code with the added modifications. 
+- First milestone video:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DG3XcSVxVLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-Schematics
-Headstone Image
 
-Code for robotic car or rover
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide here to learn how to customize it to your project needs.
+# Schematics 
+![Headstone Image](5A416919-024C-4747-82ED-2BB453C713FC.jpeg) 
 
 
