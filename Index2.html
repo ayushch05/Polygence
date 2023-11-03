@@ -3,65 +3,56 @@ My project is to build a smart car with a self-cooling system and also a robotic
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
-| Ayush C | Mountain House High School | Mechatronic Engineering | Incoming Senior
+| Ayush C | Mountain House High School | Mechatronic Engineering | Senior
 
 ![Headstone Image](IMG-1417.jpg)
   
-# Final Milestone
-My final milestone is to integrate my final modification of a self-cooling regulating system. This self-cooling regulating system consists of a fan and a thermostat, and this system works by turning on or off a fan based on the detected room temperature from the thermostat.
-- One big problem I had was to assemble the fan and thermostat kit onto my smart car using the breadboard.
-- In order to get familiar with the kit, I first tried powering the fan from the rover.
-- The fan has two wires, one red and one black wire. The 9-volt battery supplies voltage to flows from the red wire and to exit out from the black wire.
+# Introduction
+“Machine intelligence is the last invention that humanity will ever need to make.” We humans are the ones who have the potential of making an invention that can automate tasks and predict the future to make our job easier. This concept known as Artificial Intelligence uses human aspects like machine learning, speech recognition, and visual perception to accelerate the progress of this world.  In today’s society, things are becoming more complicated than ever, and competition has never been increasing at a faster rate than before. With more growth and competition for resources, we humans have been making more innovations to combat these same problems. Now with many forms of social media and an explosion of data around the world, machine learning is an extremely futuristic and potentially a powerful tool to convert data into meaningful insights. Around the world, any observation like pictures of nature and the wild give us data, but it is up to us humans to analyze it and turn it into useful information. This is where machine learning as a branch of artificial intelligence can help us break the barriers behind unstructured data. 
+To give an insight into machine learning, the best and optimal models are being created to shape the patterns and trends of datasets. Most datasets have a lot of outliers and raw data, but they also contain data with the potential of having meaningful insights. In order to extract meaningful insights, it is very important to fit the model correctly without underfitting or overfitting the dataset. Some models can have flaws of either underfitting or overfitting the data, therefore not generalizing patterns in the data leading to bias in the model. These two problems can also make the model perform very inconsistently for predictions. It is extremely important to understand the difference between overfitting and underfitting data to help avoid mistakes when training and testing a dataset. Overfitting is a common pitfall in deep learning algorithms, in which a model tries to fit the training data entirely and ends up memorizing the data patterns and the noise/random fluctuations. These models fail to generalize and perform well in the case of unseen data scenarios, defeating the model's purpose (Baheti). As Baheti states the problem of overfitting data, it is clearly evident that an overfitting-model can work or perform extremely and as close as to a 100%-accuracy. However, this indicates that this model trains way too much with one dataset and memorizes all of the features of that particular dataset. This therefore leads to the model’s massive inefficiency with other varieties of different datasets. It is the model’s purpose of generalizing any given dataset and proving the limited functionalities of the model. On the other hand, Underfitting is another common pitfall in machine learning, where the model cannot create a mapping between the input and the target variable. Under-observing the features leads to a higher error in the training and unseen data samples. It is different from overfitting, where the model performs well in the training set but fails to generalize the learning to the testing set ( Baheti). In this case, an underfitting-data model is very simple and is unable to create a relationship between the input and output variables by under-observing any trends and patterns leading to a high error while training the data. 
+As shown in the image above, an overfitted model seems to be close to perfect in accuracy rate as the model over-observes and memorizes every feature in the dataset making it a bad model to generalize other datasets. Underfitted models cannot exactly fit the data under the line and are unable to create a strong relationship to separate the data values. In this case, a linear model is a good example of an underfitting model as it fails to create a strong predictive model. A good fitting model that can generalize every dataset consistently well without any bias is shown as it nicely draws a relationship for regression purposes(Baheti).  
+In order to check if a data is fitted correctly, it is important to consider some options to look for these signs of overfitting and underfitting the data. One option is K-fold cross-validation: a technique in machine learning to test the accuracy of the model and prevent overfitting. Cross validation splits a dataset into K separate chunks, and then prediction is performed via leave-one-out. Essentially, we will take 1 chunk of data for testing and the remaining K-1 chunks of data for training. We will repeat this K number of times to get an overall idea of how our model performs (Baheti). 
+
+(Baheti)
+Machine learning can also be used for either supervised learning or unsupervised learning. Supervised learning is a major machine learning technique where we have both inputs to the model and corresponding labels we want to predict. The task of supervised learning is to minimize some loss function that characterizes how wrong a prediction from the model is from the given labels. Supervised learning helps organizations solve a variety of real-world problems at scale, such as classifying spam in a separate folder from your inbox. Some methods used in supervised learning include neural networks, naïve bayes, linear regression, logistic regression, random forest, and support vector machine (“What is machine learning?”). 
+
 - <img src="IMG-1407 (1).jpg" alt="Assembled Rover" width="200" height="250">
-- I powered the fan by plugging the red wire into one of the output pins of the H-bridge to get power from the battery and the black wire into ground level. The fan was spinning.
-- Then I had to assemble the fan with the thermostat.
-- The thermostat is consisted of a metal conductor (to conduct heat) attached to a digital temperature sensor.
 -  <img src="1CA60666-985A-4DFE-B3C1-500DFDA6B598.jpeg" alt="Assembled Rover" width="330" height="250">
-- The thermal sensor also has one yellow wire to transmit data on the detected room temperature to the arduino board. Based on the data and the detected room temperature, the arduino board provides power to the fan if the room temperature exceeds 10 degrees Fahrenheit, and otherwise not.
-- This is a segment of the output of my thermal sensor. 
 - <img src="91E2CE97-54B5-4208-A8AB-7262AFB2E3F6.jpeg" alt="Assembled Rover" width="730" height="500">
-- My final milestone video: 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fvaJicvpfIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-- My future goal of this project is to replace the fan with a machine that send data about temperature at different places and other information like pictures and wind speed to remote systems. This gives us opportunities to learn more about those places to make tasks of gathering information easier for human beings, so they can analyze raw data. 
 
+# Labeled Vs Unlabeled Data
+- On the other hand, it is also important to know and recognize another machine learning method that deals with unlabeled data. Some examples include images, audio recordings, and medical scan reports. 
+- As we saw before, models are optimized to reduce error given a label. It is very much possible to do this task with the help of a method called unsupervised learning. 
+- Unsupervised learning uses machine learning algorithms to analyze and cluster unlabeled datasets. 
+- The purpose of this model is to discover any hidden trends or patterns, mainly similarities and differences among the dataset through clustering methods.
+- Grouping the datasets into different clusters based on similar features can be done in a variety of methods. One way to use unsupervised learning is KMeans that separates a dataset into k clusters based on k centroids of data. 
+- The algorithm measures the average distance of every point from the centroids and groups the points closest to each centroid creating k clusters. 
 
-# Second Milestone
-My second milestone is completing my robotic arm and integrating it with my smart car.
-- My first plan is to make the robotic arm and assemble its parts.
-- My second plan is to test the servo motors of the robotic arm to make sure the servos are rotating accordingly to the controls.
-- My third plan is to make a stand or a table for the robotic arm to be placed on, and that stand is placed nicely on the rover so when the rover moves, the stand with the robotic arm inside doesn't fall.
-- My stand for the rover:
-   <img src="IMG-1404.jpg" alt="Assembled Rover" width="500" height="400">
-- After I assembled my robotic arm, I had to work on controlling my four servo motors. I already got the codebase, so I decided to upload them onto the arduino board of my robotic arm.
-- One problem I had was a worry that my servo motors have to move accordingly to the handling of the input devices of the potentiometers. Based on the angle the potentiometers are rotated, the servo motors rotate in the same angle.
-- Each servo motor has a corresponding potentiometer that is each connected with an analog pin.
-- Assembled robotic arm:
-  <img src="IMG-1406.jpg" alt="Assembled Rover" width="500" height="400">
-- Another problem I faced with my robotic arm was that even thought the one servo motor was spinning, the arm wouldn't move. I realized that stand near the servo motor is not attached to the servo motor. This was a mechanical pproblem, so in order to solve this problem, I used a nut and a screw to attach the servo with the stand. Now, the stand will move with the servo motor.
-- One last problem I have is making my robotic claw pick up objects. Even though the corresponding servo rotates, the claws keep twitching. I keep screwing my robotic claw hard, but the clasws don't open and close smoothly. 
--Second milestone video:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/X3QUw-6nA50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+- <img src="IMG-1404.jpg" alt="Assembled Rover" width="500" height="400">
+- <img src="IMG-1406.jpg" alt="Assembled Rover" width="500" height="400">
+- <iframe width="560" height="315" src="https://www.youtube.com/embed/X3QUw-6nA50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-# First Milestone
-To complete my project of a rover with a fan and a robotic arm, the first milestone I completed was getting my rover to follow the instructions of my arduino code in order to do basic actions like moving backward, moving forward, and turning towards one direction. I struggled to complete this milestone initially because my rover wouldn’t follow the instructions of my arduino code.
-- First, I tried to assemble all the necessary the mechanical parts of my rover before uploading Arduino source code into the arduino board. I decided to get my wire configuration right before testing my rover's positions.
-- After I assesmbled my rover's mechanical side, I decideed to work on the software part by working in the Arduino IDE editor.
-- In my code, I defined some functions called moveForward (to move forward for a certain time), moveBackward (to move backward for a certain time), turnLeft, and turnRight. Then in the loop function, I coded some instructions that would make the rover move forward and then move backward for a certain amount of time. After these two functions, the rover is instructed to rotate right and then rotate left around itself.
-- My assembled rover:
+# Testing Models on California Housing & FIFA 2023 Cards Datasets
+I initially trained some models on dataframes of California housing prices. These are the steps I took to training my models: 
+I tried the model of linear regression by using  mean squared error between the housing values predicted by the regression line and the actual and observed housing values. 
+These are the steps I took to training my models: 
+1. First, my mentor and I made a regression line between x and y variables. 
+2. We decided to make every feature (longitude, latitude, housing median age, total number of rooms, total number of bedrooms, population, households, and median income) the explanatory or independent variable while we made the median house value the response variable. 
+3. From the regression line, we can understand the relationship between the changes in the x variables and the changes in housing values. 
+4. We first made individual arrays for the x and y variables. 
+5. Lastly, we made a function to estimate the coefficient of slope and the y-intercept for the regression line.
 - <img src="IMG-1373.jpg" alt="Assembled Rover" width="500" height="400">
 - In order to test my code, I would use an USB adapter to upload my code into the arduino board.
 - <img src="IMG-1374.jpg" alt="" width="500" height="400">
-- My problem was that when my rover instructed to move forward, it would instead rotate very fast in the counterclockwise or clockwise direction. 
-- The arduino code was right, so I knew there was nothing wrong with the software part of my rover.
-- Each TT motor has a black and red wires attached as a terminal for battery voltage. The voltage flows from the positive terminal of the battery to the negative terminal. The voltage starts from the power source and starts out through the red wire. It flows through the 5 volt input power pin to the output pins of the H bridge. The source code is trasnferred from the digital pins to the input pins of the H bridge as well, and in the code, each input pin is assigned to the corresponding or matching number. 
-- Arduino board and H Bridge map:
+
+#Amazon Customer Reviews Dataset
+
 - <img src="Arduino-UNO-Description.png" alt="Arduino board" width="500" height="400">
 - <img src="H-Bridge-Motor-Driver-Circuit-using-L293D.jpeg" alt="H Bridge" width="500" height="400">
-- Solution: I forgot that my motors are set in the opposite direction. Because of this, even though both motors are spinning in the same direction, the opposite set up with make the rover as a system rotate. Due to this problem, I decided to switch the set up of the black and red wires, so the individual motors spin in opposite directions making the rover a system move forward. 
--This is how I fixed this problem.
-- Before my final project needs to be completed, I need my rover to move accordingly to the arduino code with the added modifications. 
-- First milestone video:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DG3XcSVxVLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+#Amazon Customer Reviews Dataset
 
 # Schematics 
 ![Headstone Image](5A416919-024C-4747-82ED-2BB453C713FC.jpeg) 
