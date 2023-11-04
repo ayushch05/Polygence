@@ -1,5 +1,5 @@
 # Ayush's Amazan Dataset Predictions and Improving Customer Service Through Suggestions
-My project is to build a smart car with a self-cooling system and also a robotic arm to pick up and carry objects. The robotic arm smart car has a fan that turns on/off based on the temperature measured by the thermostat assembled on the smart car. My project also has infrared sensors and a thermostat, each for different functionalities. The infrared sensors are placed underneath the rover to detect ground surface within a 5-centimeter range by emitting light waves and receiving reflected light waves. The thermostat's function is to measure the room temperature, and based on a certain room temperature, the thermostat sends a signal to arduino controller board to either turn on or off the fan. 
+Our dataset for the project is Amazon dataset. We have currently selected a Dataset that will allow us to explore how to use different ML models to try to solve the problem. In our case, we have a dataset of the value of consumer behavior and answers from a survey about Amazon service. This will give the student an opportunity to learn how to manage different data types and encode categorical data in a way that SciKit learn will be happy with it. The next step will be to see what model works by quickly testing and tuning things like Linear Regression, Support Vector Machines, and Random Forest. We will also be exploring methods to avoid overfitting and good practices for data science! From this, we will be training and testing data of consumer behavior to predict customer ratings of Amazon service through regression models. After this, we will be suggesting improves to make service better from patterns of customer behavior.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -50,12 +50,66 @@ In this case, since I was trying to make predictions for fifa ratings, I used th
 - <img src="IMG-1374.jpg" alt="" width="500" height="400">
 
 #Amazon Customer Reviews Dataset
+We have a dataset of the value of consumer behavior and answers from a survey about Amazon service. This will give me an opportunity to learn how to manage different data types and encode categorical data in a way SciKit Learn expects. The next step will be to see what model works by quickly testing and tuning things like Linear Regression, Support Vector Machines, and Random Forest. We will also be exploring methods to avoid overfitting and good practices for data science! From this, we will be training and testing data of consumer behavior to predict customer ratings of Amazon service through regression models. After this, we will be suggesting improvements to make service better from patterns of customer behavior.
+	In order to test our purpose with the Amazon Customer Reviews, we implemented regression and classification models, but our dataset contained all categorical data. Regression and classification models need to work with quantitative data to best model the data. I used label-text encoding to convert the text/string data into integers using the LabelEncoder() function as a minor fix to this problem. 
+	Our overall purpose in this dataset was to find and understand patterns from the reviews, so classification seemed the best way to go. I wanted to find the relationship between the customer behavior and satisfaction ratings. One constraint of the customer reviews data was that there were many factors, columns, and review types like “improvement areas”, “shopping satisfaction”, “rating accuracy”, “product search method”, and “review reliability”. Because the data contained so many factors and variables , TSNE was the best plotting algorithm in order to visualize the data. What is TSNE? TSNE stands for t-distributed Stochastic Neighbor Embedding. “t-SNE is something called nonlinear dimensionality reduction. What that means is this algorithm allows us to separate data that cannot be separated by any straight line, ” (“t-SNE clearly explained”). Some examples of data include: 
+(Erdem)
+	TSNE algorithms can help break down complex data (images and audio recordings) by projecting or visualizing the data into lower-dimensional space. This makes it easier to visualize data with many dimensions and retain the overall variance of the data. Before testing models, we used TSNE to make many graphs with different x and y variables. In the Amazon Dataset, there are 23 columns (factors). For each graph, I decided to have one y variable and 22 other variables as x variables to find the relationship between every other factor and one review describing the satisfaction with a feature of the customer service. I was able to plot these different combinations of plots of different y variables. These are my T SNE plots with different y variables: 
+Service Appreciation
+
+To give some brief context, perplexity is a hyperparameter of TSNE, and perplexity describes the balance between how local or global clusters of data can be. If the perplexity of the dataset is higher, the data is observed as more local, meaning there are less clusters. If the perplexity is lower, the data is observed as more local meaning a visual of more clusters. After visualizing the data, this is where I started testing and training models on the dataset to look for patterns, trends, and relationships. The first model I tried was KMeans to find clusters of data based on the average distances around the centers of each cluster. 
+(Suarez)
+
+I find the optimal number of clusters to best represent the data and to compare the clusters. Down below in an elbow plot that has the number of clusters as the x and average distance of points as y. The elbow point is the point where the number of clusters doesn’t make a difference in the average distance of the points. After 6 clusters in the graph, the average distance of points within the clusters doesn't change, so we went with 6 clusters in our k means model. 
+
+We used the KMeans model with 6 clusters to plot this TSNE graph of the amazon customer reviews dataset. 
+
+How do I find patterns in the dataset among different clusters? Using boxplots, I studied the differences in each variable among the different labeled clusters. 
+Distribution in of Rating Accuracy in Clusters (0-5)
+
+Distribution of Cart Completion Frequency in Clusters (0-5)
+
+Distribution of Service Appreciation Ratings in Clusters (0-5)
+
+Distributions of Shopping Satisfaction Ratings in Clusters (0-5)
+
+
+
+
+
+
+
+
+
+
+As shown in different boxplots, there are no specific patterns or no conclusions can be drawn about clusters. From KMeans, we cannot tell or depict any relationships between the customer service and customer satisfaction. Due to this problem, I implemented another unsupervised model: DBSCAN. What is DBSCAN? “DBSCAN is a density-based clustering algorithm that works on the assumption that clusters are dense regions in space separated by regions of lower density. It groups 'densely grouped' data points into a single cluster” (Sharma). Unlike KMeans, DBSCAN can handle clusters of different sizes and is resistant to outliers or any noises in the dataset. KMeans is useful when there are clear medians or means as centroids or any center of measures to make clusters around. DBSCAN has 2 hyperparameters that can be tuned to fit a model. One parameter is epsilon. Epsilon is the radius of the circle to be created around each data point to form sample circles. Another parameter is called minPoints, which is the minimum number of data points required inside that circle for that data point to be classified as a Core point. Do not confuse the sample with a cluster. There consists a number of minPoints around the core point within the radius or epsilon of the sample circle. This sample is classified as core point. If the sample has less than minPoints, then it is classified as a Border point. If there are no data points to form around the epsilon (eps for short form), it is considered as a noise point, indicating that data point is an outlier. 
+​​(Sharma)
+This image above shows circles constructed with a specific radius around individual data points. That radius is labeled ɛ. Around each point, the algorithm considered any nearby points within the epsilon of the circle. If there are a minPoint number of points around the data point, that data point is considered a core point. This is a requirement as a minPoint number of points makes one sample. In this case, minPoints = 3. In this case, “all the data points with less than 3 but greater than 1 point in the circle including itself are considered as Border points. They are represented by yellow. Finally, data points with no point other than itself present inside the circle are considered as Noise represented by the purple color” (Sharma). 
+	I implemented the DBSCAN algorithm. Before implementing the model, I had to choose optimal values for the parameters. To do this, I made separate lists of eps values (0 to 20) and minPoint values (0 to 20 points). I ran a for loop to run a model with different parameter values. Looking at the different models, I picked the model that had the most dense and distinguishable clusters. Therefore, I picked my 7.5 as final my eps value and 13 as the final minPoints value. 
+
+This model shows the dataset being split into 4 clusters labeled -1, 0, 1, and 2. After this, I used matplotlib and TSNE to print boxplots for different categories. Here are the boxplots:
+Distribution of Review_Helpfulness Ratings in Clusters (-1 to 2)
+
+
+
+
+
+
+
+
+Distribution of Cart_Completion_Frequency Ratings in Clusters (-1 to 2)
+
+Distribution of Search_Result_Exploration Ratings in Clusters (-1 to 2)
+
+Distribution of Improvement_Areas Ratings in Clusters (-1 to 2)
+
+As shown in the box plots, there are distinct differences in the distributions of each cluster unlike in the boxplots done under the KMeans model. For instance, the distribution of improvement area ratings is different. In the pred cluster labeled -1, there is a greater range of ratings than in the pred cluster labeled 0. Pred clusters 0, 1, and 2 have outliers unlike the cluster labeled -1. In the boxplot for the distribution of search result exploration, all distributions and their characteristics (median, range, maximum, and minimum) are the same.
+
 
 - <img src="Arduino-UNO-Description.png" alt="Arduino board" width="500" height="400">
 - <img src="H-Bridge-Motor-Driver-Circuit-using-L293D.jpeg" alt="H Bridge" width="500" height="400">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DG3XcSVxVLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-#Amazon Customer Reviews Dataset
 
 # Schematics 
 ![Headstone Image](5A416919-024C-4747-82ED-2BB453C713FC.jpeg) 
